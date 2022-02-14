@@ -1,9 +1,7 @@
-var express = require("express");
+import { app } from './app';
 
-var app = express();
-app.get("/", (req:any, res:any) => {
-  res.status(200).send("Synchronicity!!");
+// start Express server.
+app.listen(app.get('port'), () => {
+    console.log('App is running at http://localhost:%d in %s mode', app.get('port'), app.get('env'));
+    console.log('  Press CTRL-C to stop\n');
 });
-
-// ポート3000番でlistenする
-app.listen(3000);
